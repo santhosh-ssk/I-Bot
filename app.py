@@ -13,16 +13,17 @@ chatbot=ChatBot(
     logic_adapters=[
         "chatterbot.logic.BestMatch",
         'chatterbot.logic.MathematicalEvaluation',
-    ]
+    ],
+    read_only=True
     )
 
 chatbot.set_trainer(ListTrainer)
 
 @app.route("/")
 def home():
-	return str(chatbot.get_response("how are you"))
+	return str(chatbot.get_response(welcome))
 
-@app.route("/get")
+@app.route("/api/chat")
 def get_bot_response():
     userText = request.args.get('msg')
     return str(chatbot.get_response(userText))
