@@ -6,9 +6,10 @@ from chatterbot.trainers import ListTrainer
 app = Flask(__name__)
 
 chatbot=ChatBot(
-    'Bot',
-    database='./database/database.sqlite3',
-    storage_adapter="chatterbot.storage.SQLStorageAdapter",
+    'i-Bot',
+    storage_adapter = "chatterbot.storage.MongoDatabaseAdapter",
+    database = i-bot,
+    database_uri = mongodb://Roy:Roy@123@ds121309.mlab.com:21309/i-bot,
     logic_adapters=[
         "chatterbot.logic.BestMatch",
         'chatterbot.logic.MathematicalEvaluation',
