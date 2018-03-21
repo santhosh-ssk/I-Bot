@@ -52,10 +52,10 @@ def translate():
 def image_classifier():
 	api_key = 'acc_a8a69b84e97af11'
 	api_secret = 'acc_a8a69b84e97af11'
-	image_path = request.json['image_path']
+	image = request.json['image']
 	response = requests.post('https://api.imagga.com/v1/content',
 	auth=(api_key, api_secret),
-	files={'image': open(image_path, 'r')})
+	files={'image': image})
 	return jsonify(json.loads(resp.content))
 
 
