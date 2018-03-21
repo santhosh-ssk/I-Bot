@@ -24,12 +24,12 @@ def home():
 	return "welcome"
 
 @app.route("/api/chat", methods=['POST'])
-def get_bot_response():
+def chat():
     userText = request.json['msg']
     return jsonify(response=str(chatbot.get_response(userText)))
 
 @app.route("/api/learn", methods=['POST'])
-def get_bot_response():
+def learn():
     conversation = request.json['msg']
     if len(conversation) !=2:
     	return jsonify(error="invalid no of conversations")
