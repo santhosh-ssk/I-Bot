@@ -16,31 +16,6 @@ chatbot=ChatBot(
     read=True
     )
 
-chatbot.set_trainer(ListTrainer)
-conversation=[
-    "let us start learning",
-    "let us start learning"]
-
-chatbot.train(conversation)
-conversation=[
-    "that it",
-    "that it"
-]
-
-chatbot.train(conversation)
-conversation=[
-    "stop",
-    "stop"
-]
-chatbot.train(conversation)
-
-chatbot.train(conversation)
-conversation=[
-    "how are you?",
-    "iam fine."
-]
-chatbot.train(conversation)
-
 @app.route("/")
 def home():
 	return str(chatbot.get_response("let us start learning."))
