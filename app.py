@@ -15,7 +15,6 @@ chatbot=ChatBot(
     ]
     )
 
-chatbot.train(conversation)
 conversation=[
     "how are you",
     "iam fine"
