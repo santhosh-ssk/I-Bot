@@ -13,7 +13,7 @@ chatbot=ChatBot(
         "chatterbot.logic.BestMatch",
         'chatterbot.logic.MathematicalEvaluation',
     ],
-    read_only=True
+    read=True
     )
 
 chatbot.set_trainer(ListTrainer)
