@@ -56,7 +56,7 @@ def image_classifier():
 	print(image.read().decode('utf-8'))
 	response = requests.post('https://api.imagga.com/v1/content',
 	auth=(api_key, api_secret),
-	files={'image': image.read()})
+	files={'image': image.read().decode('utf-8')})
 	return jsonify(json.loads(response.content.decode("utf-8")))
 
 
