@@ -48,5 +48,16 @@ def translate():
 	resp = requests.request("POST","https://translate.yandex.net/api/v1.5/tr.json/translate ?key=trnsl.1.1.20180321T182122Z.0744c55b609c1cca.0377b6bfa4fd2ff3b9efb061d71df78173b6a017& text="+request.json["text"]+"& lang="+request.json["from"]+"-"+request.json["to"], headers=headers)
 	return jsonify(json.loads(resp.content))
 
+@app.route("/api/image_classifier", methods=['POST'])
+def image_classifier():
+	api_key = 'acc_a8a69b84e97af11'
+	api_secret = 'acc_a8a69b84e97af11'
+	image_path = request.json['image_path']
+	response = requests.post('https://api.imagga.com/v1/content',
+	auth=(api_key, api_secret),
+	files={'image': open(image_path, 'r')})
+	return jsonify(json.loads(resp.content))
+
+
 if __name__ == "__main__":
     app.run(debug=True)
