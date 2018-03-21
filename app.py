@@ -30,12 +30,12 @@ def chat():
 
 @app.route("/api/learn", methods=['POST'])
 def learn():
-    print(request.json['msg'])
+    #print(request.json['msg'])
     conversation = request.json['msg']
     if len(conversation) !=2:
     	return jsonify(error="invalid no of conversations")
     else:
-    	chatbot.train(conversations)
+    	chatbot.train(conversation)
     	return jsonify(response="success")
 
 if __name__ == "__main__":
