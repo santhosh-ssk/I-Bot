@@ -1,23 +1,47 @@
 from flask import Flask, render_template, request
 from chatterbot import ChatBot
 from chatterbot.trainers import ChatterBotCorpusTrainer
+from chatterbot.trainers import ListTrainer
 
 app = Flask(__name__)
 
-english_bot = ChatBot("Chatterbot", storage_adapter="chatterbot.storage.SQLStorageAdapter")
+chatbot=ChatBot(
+    'Bot',
+    database='./database/database.sqlite3',
+    storage_adapter="chatterbot.storage.SQLStorageAdapter",
+    logic_adapters=[
+        "chatterbot.logic.BestMatch",
+        'chatterbot.logic.MathematicalEvaluation',
+    ],
+    read_only=True
+    )
 
-english_bot.set_trainer(ChatterBotCorpusTrainer)
-english_bot.train("chatterbot.corpus.english")
+chatbot.set_trainer(ListTrainer)
+conversation=[
+    "let us start learning",
+    "let us start learning"]
 
+chatbot.train(conversation)
+conversation=[
+    "that it",
+    "that it"
+]
+
+chatbot.train(conversation)
+conversation=[
+    "stop",
+    "stop"
+]
+chatbot.train(conversation)
 
 @app.route("/")
 def home():
-    return render_template("index.html")
+    return str(chatbot.get_response("let us start learning"))
 
 @app.route("/get")
 def get_bot_response():
     userText = request.args.get('msg')
-    return str(english_bot.get_response(userText))
+    return str(chatbot.get_response(userText))
 
 
 if __name__ == "__main__":
