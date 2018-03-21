@@ -16,10 +16,6 @@ chatbot=ChatBot(
     ]
     )
 
-conversation=[
-    "how are you",
-    "iam fine"
-]
 chatbot.set_trainer(ListTrainer)
 chatbot.train(conversation)
 @app.route("/")
