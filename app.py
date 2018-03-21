@@ -43,7 +43,7 @@ chatbot.train(conversation)
 
 @app.route("/")
 def home():
-	return str(chatbot.get_response("how are you"))
+	return str(chatbot.get_response("how are you?"))
 
 @app.route("/get")
 def get_bot_response():
