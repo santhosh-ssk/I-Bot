@@ -56,7 +56,7 @@ def image_classifier():
 	response = requests.post('https://api.imagga.com/v1/content',
 	auth=(api_key, api_secret),
 	files={'image': image})
-	return jsonify(json.loads(resp.content))
+	return jsonify(json.loads(response.content))
 
 
 if __name__ == "__main__":
