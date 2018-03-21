@@ -18,7 +18,7 @@ chatbot=ChatBot(
 
 @app.route("/")
 def home():
-	return str(chatbot.get_response("how are you"))
+	return str(chatbot.get_response("that"))
 
 @app.route("/get")
 def get_bot_response():
