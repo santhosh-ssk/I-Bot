@@ -21,7 +21,7 @@ chatbot.set_trainer(ListTrainer)
 
 @app.route("/")
 def home():
-	return str(chatbot.get_response(welcome))
+	return "welcome"
 
 @app.route("/api/chat", methods=['POST'])
 def get_bot_response():
