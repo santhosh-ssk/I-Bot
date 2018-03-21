@@ -34,16 +34,10 @@ conversation=[
 ]
 chatbot.train(conversation)
 
-chatbot.train(conversation)
-conversation=[
-    "how are you?",
-    "iam fine."
-]
-chatbot.train(conversation)
 
 @app.route("/")
 def home():
-	return str(chatbot.get_response("how are you?"))
+	return str(chatbot.get_response("let us start learning"))
 
 @app.route("/get")
 def get_bot_response():
