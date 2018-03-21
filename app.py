@@ -17,7 +17,7 @@ chatbot=ChatBot(
     )
 
 chatbot.set_trainer(ListTrainer)
-chatbot.train(conversation)
+
 @app.route("/")
 def home():
 	return str(chatbot.get_response("how are you"))
