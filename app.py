@@ -51,12 +51,12 @@ def translate():
 @app.route("/api/image_classifier", methods=['POST'])
 def image_classifier():
 	api_key = 'acc_a8a69b84e97af11'
-	api_secret = 'acc_a8a69b84e97af11'
+	api_secret = '97eed8248a51c9feaf65e172ee9010e8'
 	image = request.files['image']
 	response = requests.post('https://api.imagga.com/v1/content',
 	auth=(api_key, api_secret),
 	files={'image': image})
-	return jsonify(response=str(response.content))
+	return jsonify(json.loads(response.content.decode("utf-8")))
 
 
 if __name__ == "__main__":
