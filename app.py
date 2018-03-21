@@ -45,15 +45,6 @@ headers = {
 
 @app.route("/api/translate", methods=['POST'])
 def translate():
-    #print(request.json['msg'])
-	requestPayload = {
-	    "to": email_data['to'],
-	    "from": "admin@project.com",
-	    "fromName": "SVCE Grievance Redressal Committee",
-	    "sub": email_data["sub"],
-	    "text": email_data["text"],
-	    "html": email_data["html"]
-	}
 	resp = requests.request("POST","https://translate.yandex.net/api/v1.5/tr.json/translate ?key=trnsl.1.1.20180321T182122Z.0744c55b609c1cca.0377b6bfa4fd2ff3b9efb061d71df78173b6a017& text="+request.json["text"]+"& lang="+request.json["from"]+"-"+request.json["to"], headers=headers)
 	return jsonify(json.loads(resp.content))
 
