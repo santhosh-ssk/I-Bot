@@ -12,8 +12,7 @@ chatbot=ChatBot(
     logic_adapters=[
         "chatterbot.logic.BestMatch",
         'chatterbot.logic.MathematicalEvaluation',
-    ],
-    read=True
+    ]
     )
 
 @app.route("/")
