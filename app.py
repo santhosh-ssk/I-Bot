@@ -35,7 +35,7 @@ def get_bot_response():
     	return jsonify(error="invalid no of conversations")
     else:
     	chatbot.train(conversations)
-    	return jsonify(response=str(chatbot.get_response(userText)))
+    	return jsonify(response="success")
 
 if __name__ == "__main__":
     app.run(debug=True)
