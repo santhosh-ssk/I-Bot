@@ -321,7 +321,7 @@ function linebreak(s) {
                 dataType: "json",
                 async: false
               });
-		console.log(query_text)
+		console.log(query_text.responseJson.response)
 		return (query_text.responseJson.response);
         /*setTimeout(linebreak(s,0),5000);
         }
