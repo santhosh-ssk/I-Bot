@@ -410,6 +410,7 @@ function startButton(event) {
   final_transcript = '';
   recognition.lang = select_dialect.value;
   recognition.start();
+  recognition.stop();
   ignore_onend = false;
   final_span.innerHTML = '';
   interim_span.innerHTML = '';
