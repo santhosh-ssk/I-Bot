@@ -118,15 +118,16 @@
     &nbsp;&nbsp;
     <select id="select_dialect"></select>
   </div>
-  <input type="button" value="speech" onclick="speech_detction()">
+  <input type="button" value="speech" id="speech_button" onclick="speech_detction()">
 </div>
 <script src="static/jquery.min.js"></script>
 <script>
   final_transcript=''
   response_message=''
+  final_transcript_temp=''
   function speech_detction(){
   	startButton("onclick");
-  	console.log([final_transcript,response_message,"function"]);
+  	console.log([final_transcript_temp,response_message,"function"]);
   }
 
 $(document).ready(function(){
@@ -140,9 +141,8 @@ $(document).ready(function(){
   		{
   			i=0;
   		while(true){
-  			//console.log("cycle");
-  			speech_detction();
-  			i++;
+  			$("#speech_button").trigger('click');
+   			i++;
   			if(i%10==0)
   				break;
   			}
@@ -319,6 +319,7 @@ if (!('webkitSpeechRecognition' in window)) {
       }
     }
     final_span.innerHTML = final_transcript+"<br>"
+    final_transcript_temp=final_transcript
     console.log("onresult");
     recognition.abort();
     response_message=linebreak(final_transcript)
