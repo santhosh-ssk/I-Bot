@@ -321,7 +321,7 @@ function linebreak(s) {
                 dataType: "json",
                 async: false
               });
-		return query_text.responseJson['response'];
+		return (query_text.responseJson.response);
         /*setTimeout(linebreak(s,0),5000);
         }
     else{
