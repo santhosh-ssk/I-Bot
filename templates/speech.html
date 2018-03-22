@@ -322,7 +322,7 @@ function linebreak(s) {
                 async: false
               });
 		console.log(query_text.responseJson)
-		return JSON.parse(query_text.responseJson)['response'];
+		return JSON.parse(query_text.responseJson).response;
         /*setTimeout(linebreak(s,0),5000);
         }
     else{
