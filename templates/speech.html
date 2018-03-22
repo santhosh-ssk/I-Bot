@@ -118,6 +118,7 @@
     &nbsp;&nbsp;
     <select id="select_dialect"></select>
   </div>
+  <button onclick="speech_detction()">Speech</button>
 </div>
 <script src="static/jquery.min.js"></script>
 <script>
@@ -136,9 +137,7 @@ $(document).ready(function(){
   }
   say("welcome to mysite, iam Rio");
   speech_delay();
-  //console.log([final_transcript,response_message])
-  startButton("onclick");
-  console.log([final_transcript,response_message])
+
   /*function print_message(){
   	console.log("wating")
   	if(__speech_flag){
@@ -148,6 +147,10 @@ $(document).ready(function(){
   	else setTimeout(print_message(), 5000);
 
   }*/
+  function speech_detction(){
+  	startButton("onclick");
+ 	console.log([final_transcript,response_message]);
+  }
 });
 var langs =
 [['Afrikaans',       ['af-ZA']],
