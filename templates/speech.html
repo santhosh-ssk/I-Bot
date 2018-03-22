@@ -129,14 +129,14 @@ $(document).ready(function(){
   	if(!speech_uttrance)
   		setTimeout(speech_delay, 1000);
   	else 
-  		{__speech_flag=false,
+  		{//__speech_flag=false,
   		startButton("onclick");
   		console.log("function initallised")
-  		setTimeout(print_message(), 1000);
+  		//setTimeout(print_message(), 1000);
   		}
   }
   speech_delay();
-  function print_message(){
+  /*function print_message(){
   	console.log("wating")
   	if(__speech_flag){
   		alert([s,response_message]);
@@ -144,7 +144,7 @@ $(document).ready(function(){
   	}
   	else setTimeout(print_message(), 5000);
 
-  }
+  }*/
 });
 var langs =
 [['Afrikaans',       ['af-ZA']],
