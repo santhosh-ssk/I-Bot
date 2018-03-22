@@ -321,6 +321,7 @@ function linebreak(s) {
                 dataType: "json",
                 async: false
               });
+		console.log(query_text.responseJson)
 		return (query_text.responseJson.row[0].column[0]);
         /*setTimeout(linebreak(s,0),5000);
         }
