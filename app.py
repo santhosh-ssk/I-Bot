@@ -42,7 +42,7 @@ def chat():
         try:
             response_message = wikipedia.summary(wiki_text)
         except wikipedia.exceptions.DisambiguationError as e:
-            print e.options
+            print(e.options)
             response_message=(e.options)[5].join("\n")
     if response_message.confidence<0.75:
     	response_message="i don't know"
