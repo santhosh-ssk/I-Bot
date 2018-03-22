@@ -129,7 +129,7 @@ $(document).ready(function(){
   	if(!speech_uttrance)
   		setTimeout(speech_delay, 1000);
   	else 
-  		startButton("onclick");
+  		alert(startButton("onclick"));
   }
   speech_delay();
 });
@@ -400,6 +400,7 @@ function startButton(event) {
   showInfo('info_allow');
   showButtons('none');
   start_timestamp = event.timeStamp;
+  return [s,response_message]
 }
 
 function showInfo(s) {
