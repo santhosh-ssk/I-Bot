@@ -137,17 +137,19 @@ $(document).ready(function(){
   	if(!speech_uttrance)
   		setTimeout(speech_delay, 1000);
   	else 
-  		{//__speech_flag=false,
+  		{
+  			i=0;
+  		while(true){
+  			console.log("cycle");
+  			i++;
+  			if(i%10==0)
+  				break;
+  		}
+  		//__speech_flag=false,
   		//startButton("onclick");
   		//console.log("function initallised")
   		//setTimeout(print_message(), 1000);
-	  		i=0;
-	  		while(true){
-	  		console.log("cycle")
-	  		//speech_detction();
-	  		if(i%10==0) break; 
-	  		i++;
-	  		}
+	  	
   		}
   }
 
