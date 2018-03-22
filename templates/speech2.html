@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Rio</title>
+    <script src="static/artyom.window.min.js"></script>
+<script type="text/javascript">
+
+const artyom = new Artyom();
+var UserDictation = artyom.newDictation({
+   // Enable continuous if HTTPS connection
+    onResult:function(text){
+        // Do something with the text
+        if(!artyom.isSpeaking()){
+        	console.log("audio recorded\n"+text);
+        	UserDictation.stop()}
+        console.log(text);
+    },
+    onStart:function(){
+        console.log("Dictation started by the user");
+    },
+    onEnd:function(){
+
+        alert("Dictation stopped by the user");
+    }
+});
+
+UserDictation.start();
+</script>
+</head>
+<body>
+
+</body>
+</html>
