@@ -42,6 +42,7 @@ def chat():
 def learn():
 
     conversation = request.json['msg'].split(',')
+    print(conversation)
     if len(conversation) !=2:
     	return jsonify(error="invalid no of conversations")
     else:
