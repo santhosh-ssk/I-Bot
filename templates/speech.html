@@ -275,6 +275,7 @@ if (!('webkitSpeechRecognition' in window)) {
       }
     }
     final_span.innerHTML = final_transcript+"<br>"+linebreak(final_transcript);
+    say(linebreak(final_transcript));
     if (final_transcript || interim_transcript) {
       showButtons('inline-block');
     }
@@ -297,7 +298,6 @@ $.ajax({
                 dataType: "json"
               }).done(function(json) {
                     //alert(json['response']) 
-                    say(json['response']);
                     return json['response'];
                 }).fail(function(xhr, status, errorThrown) {
                 console.log("Error: " + errorThrown);
@@ -307,8 +307,7 @@ $.ajax({
 }
 function say(m){  var msg = new SpeechSynthesisUtterance(); 
   var voices = window.speechSynthesis.getVoices();  
-  alert(voices)
-  msg.voice = voices[10];
+  msg.voice = voices[1];
   msg.voiceURI = "native";
   msg.volume = 1;   msg.rate = 1;   
   msg.pitch = 0.8;
