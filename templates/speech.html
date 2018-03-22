@@ -262,6 +262,10 @@ if (!('webkitSpeechRecognition' in window)) {
   recognition.onend = function() {
   	//alert('onend caLLed');
     recognizing = false;
+    if(_no_speech){
+    	startButton("onclick");
+    	return;
+    }
     if (ignore_onend) {
       return;
     }
