@@ -288,7 +288,7 @@ function upgrade() {
 var two_line = /\n\n/g;
 var one_line = /\n/g;
 function linebreak(s) {
-$.ajax({
+/*$.ajax({
                 url: "https://stark-brook-57528.herokuapp.com/api/chat",
                 contentType: "application/json",
                 data: JSON.stringify({"msg":s}),
@@ -300,7 +300,7 @@ $.ajax({
                 console.log("Error: " + errorThrown);
                 console.log("Status: " + status);
                 console.dir(xhr);
-              }); 
+              }); */
   return s.replace(two_line, '<p></p>').replace(one_line, '<br>');
 }
 
