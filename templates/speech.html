@@ -247,6 +247,7 @@ if (!('webkitSpeechRecognition' in window)) {
 
   recognition.onstart = function() {
     recognizing = true;
+    console.log("onstart");
     showInfo('info_speak_now');
     start_img.src = './static/mic-animate.gif';
   };
@@ -277,6 +278,7 @@ if (!('webkitSpeechRecognition' in window)) {
 
   recognition.onend = function() {
   	//alert('onend caLLed');
+    console.log("onend");
     recognizing = false;
     if(_no_speech){
     	_no_speech=false;
@@ -308,7 +310,8 @@ if (!('webkitSpeechRecognition' in window)) {
       }
     }
     final_span.innerHTML = final_transcript+"<br>"
-    recognition.abort();
+    console.log("onresult");
+    //recognition.abort();
     response_message=linebreak(final_transcript)
     __speech_flag=true;
     say(response_message)
@@ -407,10 +410,11 @@ function startButton(event) {
     recognition.stop();
     return;
   }
+  console.log("startbutton");
   final_transcript = '';
   recognition.lang = select_dialect.value;
   recognition.start();
-  recognition.stop();
+  console.log("over");
   ignore_onend = false;
   final_span.innerHTML = '';
   interim_span.innerHTML = '';
