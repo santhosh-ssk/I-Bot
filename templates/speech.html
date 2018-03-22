@@ -274,8 +274,7 @@ if (!('webkitSpeechRecognition' in window)) {
         final_transcript = event.results[i][0].transcript;
       }
     }
-    final_span.innerHTML = final_transcript+"<br>"+linebreak(final_transcript);
-    say(linebreak(final_transcript));
+    final_span.innerHTML = final_transcript+"<br>"
     if (final_transcript || interim_transcript) {
       showButtons('inline-block');
     }
@@ -297,8 +296,9 @@ $.ajax({
                 type: "POST",
                 dataType: "json"
               }).done(function(json) {
-                    //alert(json['response']) 
-                    return json['response'];
+                    say(json['response']);
+                    final_span.innerHTML +=json['response']
+
                 }).fail(function(xhr, status, errorThrown) {
                 console.log("Error: " + errorThrown);
                 console.log("Status: " + status);
