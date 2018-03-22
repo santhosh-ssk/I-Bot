@@ -49,6 +49,7 @@ def chat():
             response_message=(e.options)[5].join("\n")
     else:
         response_message=str(response_message)
+        
     return jsonify(response=response_message)
     
 @app.route("/api/learn", methods=['POST'])
