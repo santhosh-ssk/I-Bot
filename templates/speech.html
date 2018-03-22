@@ -103,7 +103,7 @@
 </div>
 <div class="right">
   <button id="start_button" onclick="startButton(event)">
-    <img id="start_img" src="mic.gif" alt="Start"></button>
+    <img id="start_img" src="./static/mic.gif" alt="Start"></button>
 </div>
 <div id="results">
   <span id="final_span" class="final"></span>
@@ -125,7 +125,7 @@ $(document).ready(function(){
   speech_uttrance=false
   say("welcome to mysite, iam Rio");
   function  speech_delay(){
-  	alert(speech_uttrance)
+  	//alert(speech_uttrance)
   	if(!speech_uttrance)
   		setTimeout(speech_delay, 1000);
   	else 
@@ -233,18 +233,19 @@ if (!('webkitSpeechRecognition' in window)) {
   recognition.onstart = function() {
     recognizing = true;
     showInfo('info_speak_now');
-    start_img.src = 'mic-animate.gif';
+    start_img.src = './static/mic-animate.gif';
   };
 
   recognition.onerror = function(event) {
     if (event.error == 'no-speech') {
-      start_img.src = 'mic.gif';
+      start_img.src = './static/mic.gif';
       showInfo('info_no_speech');
       ignore_onend = true;
+      _no_speech=true
 
     }
     if (event.error == 'audio-capture') {
-      start_img.src = 'mic.gif';
+      start_img.src = './static/mic.gif';
       showInfo('info_no_microphone');
       ignore_onend = true;
     }
@@ -264,7 +265,7 @@ if (!('webkitSpeechRecognition' in window)) {
     if (ignore_onend) {
       return;
     }
-    start_img.src = 'mic.gif';
+    start_img.src = './static/mic.gif';
     if (!final_transcript) {
       showInfo('info_start');
       return;
@@ -292,9 +293,6 @@ if (!('webkitSpeechRecognition' in window)) {
     final_span.innerHTML = final_transcript+"<br>"
     linebreak(final_transcript)
     recognition.stop();
-    if (final_transcript || interim_transcript) {
-      showButtons('inline-block');
-    }
 
   };
 }
@@ -386,7 +384,7 @@ function startButton(event) {
   ignore_onend = false;
   final_span.innerHTML = '';
   interim_span.innerHTML = '';
-  start_img.src = 'mic-slash.gif';
+  start_img.src = './static/mic-slash.gif';
   showInfo('info_allow');
   showButtons('none');
   start_timestamp = event.timeStamp;
