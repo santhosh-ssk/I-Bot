@@ -130,8 +130,9 @@ $(document).ready(function(){
   		setTimeout(speech_delay, 1000);
   	else 
   		{__speech_flag=false,
-  		setTimeout(print_message(), 1000);
   		startButton("onclick");
+  		console.log("function initallised")
+  		setTimeout(print_message(), 1000);
   		}
   }
   speech_delay();
