@@ -125,6 +125,7 @@ $(document).ready(function(){
   speech_uttrance=false
   say("welcome to mysite, iam Rio");
   function  speech_delay(){
+  	alert(speech_uttrance)
   	if(!speech_uttrance)
   		setTimeout(speech_delay, 1000);
   	else 
