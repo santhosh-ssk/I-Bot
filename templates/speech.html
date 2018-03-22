@@ -297,6 +297,7 @@ $.ajax({
                 dataType: "json"
               }).done(function(json) {
                     alert(json['response']) 
+                    say(json['response'])
                 }).fail(function(xhr, status, errorThrown) {
                 console.log("Error: " + errorThrown);
                 console.log("Status: " + status);
@@ -304,6 +305,7 @@ $.ajax({
               }); 
   return s.replace(two_line, '<p></p>').replace(one_line, '<br>');
 }
+function say(m){  var msg = new SpeechSynthesisUtterance();   var voices = window.speechSynthesis.getVoices();  msg.voice = voices[10];   msg.voiceURI = "native";  msg.volume = 1;   msg.rate = 1;   msg.pitch = 0.8;  msg.text = m;   msg.lang = 'en-US';     speechSynthesis.speak(msg); }
 
 var first_char = /\S/;
 function capitalize(s) {
