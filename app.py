@@ -40,8 +40,8 @@ def chat():
 
 @app.route("/api/learn", methods=['POST'])
 def learn():
-    print(request.json['msg'],type(request.json['msg']),len(request.json['msg']))
-    conversation = request.json['msg']
+
+    conversation = request.json['msg'].split(',')
     if len(conversation) !=2:
     	return jsonify(error="invalid no of conversations")
     else:
