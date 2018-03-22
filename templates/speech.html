@@ -131,12 +131,13 @@ $(document).ready(function(){
   		setTimeout(speech_delay, 1000);
   	else 
   		{//__speech_flag=false,
-  		startButton("onclick");
-  		console.log("function initallised")
+  		//startButton("onclick");
+  		//console.log("function initallised")
   		//setTimeout(print_message(), 1000);
+  		speech_detction();
   		}
   }
-    function speech_detction(){
+  function speech_detction(){
   	startButton("onclick");
  	console.log([final_transcript,response_message]);
   }
