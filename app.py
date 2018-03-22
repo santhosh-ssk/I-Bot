@@ -49,6 +49,7 @@ def chat():
         except wikipedia.exceptions.DisambiguationError as e:
             print(e.options)
             response_message=(e.options)[5].join("\n")
+        return response_message
     
 @app.route("/api/learn", methods=['POST'])
 def learn():
