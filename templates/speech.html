@@ -213,6 +213,7 @@ var final_transcript = '';
 var recognizing = false;
 var ignore_onend;
 var start_timestamp;
+
 if (!('webkitSpeechRecognition' in window)) {
   upgrade();
 } else {
@@ -280,9 +281,11 @@ if (!('webkitSpeechRecognition' in window)) {
     }
     final_span.innerHTML = final_transcript+"<br>"
     linebreak(final_transcript)
+    recognition.stop();
     if (final_transcript || interim_transcript) {
       showButtons('inline-block');
     }
+
   };
 }
 
