@@ -35,9 +35,7 @@ def chat():
     response_message=(chatbot.get_response(userText))
     if response_message.confidence<0.75:
     	response_message="i don't know"
-    else:
-    	response_message=str(response_message)
-    return jsonify(response=response_message)
+    
     elif: response_message in ["what do you mean by","what do you mean"]:
         if "by" in userText.split():
             wiki_text=userText.split("by")[1]
@@ -49,7 +47,9 @@ def chat():
         except wikipedia.exceptions.DisambiguationError as e:
             print(e.options)
             response_message=(e.options)[5].join("\n")
-        return response_message
+    else:
+        response_message=str(response_message)
+    return jsonify(response=response_message)
     
 @app.route("/api/learn", methods=['POST'])
 def learn():
