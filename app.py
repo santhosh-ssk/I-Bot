@@ -19,7 +19,11 @@ chatbot=ChatBot(
     )
 
 chatbot.set_trainer(ListTrainer)
-
+conversation=[
+"stop",
+"stop"
+]
+chatbot.train(conversation)
 @app.route("/")
 def home():
 	return render_template("speech.html")
