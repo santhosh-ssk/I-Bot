@@ -124,6 +124,7 @@
 <script>
 $(document).ready(function(){
   speech_uttrance=false
+
   function  speech_delay(){
   	//alert(speech_uttrance)
   	if(!speech_uttrance)
@@ -135,6 +136,11 @@ $(document).ready(function(){
   		//setTimeout(print_message(), 1000);
   		}
   }
+    function speech_detction(){
+  	startButton("onclick");
+ 	console.log([final_transcript,response_message]);
+  }
+
   say("welcome to mysite, iam Rio");
   speech_delay();
 
@@ -147,10 +153,6 @@ $(document).ready(function(){
   	else setTimeout(print_message(), 5000);
 
   }*/
-  function speech_detction(){
-  	startButton("onclick");
- 	console.log([final_transcript,response_message]);
-  }
 });
 var langs =
 [['Afrikaans',       ['af-ZA']],
