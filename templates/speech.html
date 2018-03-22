@@ -129,9 +129,21 @@ $(document).ready(function(){
   	if(!speech_uttrance)
   		setTimeout(speech_delay, 1000);
   	else 
-  		alert(startButton("onclick"));
+  		{__speech_flag=false,
+  		startButton("onclick");
+  		setTimeout(print_message(), 1000);
+  		}
   }
   speech_delay();
+  print_message(){
+  	console.log("wating")
+  	if(__speech_flag){
+  		alert([s,response_message]);
+  		return;
+  	}
+  	else setTimeout(print_message(), 20000);
+
+  }
 });
 var langs =
 [['Afrikaans',       ['af-ZA']],
@@ -393,8 +405,6 @@ function startButton(event) {
   }
   final_transcript = '';
   recognition.lang = select_dialect.value;
-    s=''
-  response_message=''
   recognition.start();
   ignore_onend = false;
   final_span.innerHTML = '';
@@ -403,8 +413,6 @@ function startButton(event) {
   showInfo('info_allow');
   showButtons('none');
   start_timestamp = event.timeStamp;
-  console.log([s,response_message])
-  return [s,response_message];
 }
 
 function showInfo(s) {
