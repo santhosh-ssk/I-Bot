@@ -311,7 +311,7 @@ if (!('webkitSpeechRecognition' in window)) {
     }
     final_span.innerHTML = final_transcript+"<br>"
     console.log("onresult");
-    //recognition.abort();
+    recognition.abort();
     response_message=linebreak(final_transcript)
     __speech_flag=true;
     say(response_message)
