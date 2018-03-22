@@ -139,10 +139,11 @@ $(document).ready(function(){
   	else 
   		{
   			i=0;
+  		speech_detction();
   		while(true){
   			//$("#speech_button").trigger('click');
+   			console.log([final_transcript_temp,response_message,"function",i]);
    			speech_detction();
-   			console.log([final_transcript_temp,response_message,"function"]);
    			i++;
   			if(i%10==0)
   				break;
