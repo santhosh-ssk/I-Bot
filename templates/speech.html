@@ -122,6 +122,13 @@
 </div>
 <script src="static/jquery.min.js"></script>
 <script>
+  final_transcript=''
+  response_message=''
+  function speech_detction(){
+  	startButton("onclick");
+ 	console.log([final_transcript,response_message]);
+  }
+
 $(document).ready(function(){
   speech_uttrance=false
 
@@ -142,10 +149,7 @@ $(document).ready(function(){
 	  		}
   		}
   }
-  function speech_detction(){
-  	startButton("onclick");
- 	console.log([final_transcript,response_message]);
-  }
+
 
   say("welcome to mysite, iam Rio");
   speech_delay();
