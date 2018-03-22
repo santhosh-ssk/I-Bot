@@ -300,6 +300,7 @@ if (!('webkitSpeechRecognition' in window)) {
       range.selectNode(document.getElementById('final_span'));
       window.getSelection().addRange(range);
     }
+    console.log("process over")
   };
 
   recognition.onresult = function(event) {
