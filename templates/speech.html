@@ -127,7 +127,6 @@
   final_transcript_temp=''
   function speech_detction(){
   	startButton("onclick");
-  	console.log([final_transcript_temp,response_message,"function"]);
   }
 
 $(document).ready(function(){
@@ -141,8 +140,9 @@ $(document).ready(function(){
   		{
   			i=0;
   		while(true){
-  			$("#speech_button").trigger('click');
-   			console.log("process")
+  			//$("#speech_button").trigger('click');
+   			speech_detction();
+   			console.log([final_transcript_temp,response_message,"function"]);
    			i++;
   			if(i%10==0)
   				break;
