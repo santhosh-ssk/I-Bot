@@ -34,7 +34,7 @@ def chat():
     userText = request.json['msg']
     response_message=(chatbot.get_response(userText))
     if response_message.confidence<0.75:
-    	response_message="i don't know"
+    	response_message="sorry,i don't know"
     
     elif response_message in ["what do you mean by","what do you mean"]:
         if "by" in userText.split():
