@@ -309,6 +309,7 @@ if (!('webkitSpeechRecognition' in window)) {
       window.getSelection().addRange(range);
     }
     console.log("process over")
+    recognition.stop()
     return;
   };
 
