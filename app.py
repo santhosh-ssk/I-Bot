@@ -32,7 +32,7 @@ def chat():
     	response_message="i don't know"
     else:
     	response_message=str(response_message)
-    return jsonify(response=)
+    return jsonify(response=response_message)
 
 @app.route("/api/learn", methods=['POST'])
 def learn():
