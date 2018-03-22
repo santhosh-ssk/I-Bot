@@ -328,7 +328,7 @@ function say(m){  var msg = new SpeechSynthesisUtterance();
   msg.onend = function(event) {
   console.log('Utterance has finished being spoken after ' + event.elapsedTime + ' milliseconds.');
   speech_uttrance=true;
-} 
+	} 
   msg.voice = voices[1];
   msg.voiceURI = "native";
   msg.volume = 1;   msg.rate = 1;   
