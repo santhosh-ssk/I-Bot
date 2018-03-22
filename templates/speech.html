@@ -126,6 +126,7 @@
   response_message=''
   function speech_detction(){
   	startButton("onclick");
+  	console.log([final_transcript,response_message,"function"]);
   }
 
 $(document).ready(function(){
@@ -141,16 +142,10 @@ $(document).ready(function(){
   		while(true){
   			//console.log("cycle");
   			speech_detction();
-  			console.log([final_transcript,response_message,"function"]);
   			i++;
   			if(i%10==0)
   				break;
-  		}
-  		//__speech_flag=false,
-  		//startButton("onclick");
-  		//console.log("function initallised")
-  		//setTimeout(print_message(), 1000);
-	  	
+  			}
   		}
   }
 
@@ -158,15 +153,6 @@ $(document).ready(function(){
   say("welcome to mysite, iam Rio");
   speech_delay();
 
-  /*function print_message(){
-  	console.log("wating")
-  	if(__speech_flag){
-  		alert([s,response_message]);
-  		return;
-  	}
-  	else setTimeout(print_message(), 5000);
-
-  }*/
 });
 var langs =
 [['Afrikaans',       ['af-ZA']],
@@ -368,13 +354,7 @@ function linebreak(s) {
               });
 		console.log(query_text.responseJSON.response)
 		return (query_text.responseJSON.response);
-        /*setTimeout(linebreak(s,0),5000);
-        }
-    else{
-    	if(data_recived_flag)
-    		return json['response'];
-    	else setTimeout(linebreak(s,0),5000);
-    } */
+
 }
 function say(m){  var msg = new SpeechSynthesisUtterance(); 
   var voices = window.speechSynthesis.getVoices(); 
