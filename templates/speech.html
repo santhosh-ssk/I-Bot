@@ -240,6 +240,7 @@ if (!('webkitSpeechRecognition' in window)) {
     if (event.error == 'no-speech') {
       start_img.src = './static/mic.gif';
       showInfo('info_no_speech');
+      console.log("no speech\n");
       ignore_onend = true;
       _no_speech=true
 
