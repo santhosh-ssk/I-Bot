@@ -134,7 +134,11 @@ $(document).ready(function(){
   		//startButton("onclick");
   		//console.log("function initallised")
   		//setTimeout(print_message(), 1000);
+  		while(1){
   		speech_detction();
+  		if(response_message==stop)
+  			break;
+  		}
   		}
   }
   function speech_detction(){
