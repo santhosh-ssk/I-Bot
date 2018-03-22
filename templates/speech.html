@@ -294,6 +294,8 @@ if (!('webkitSpeechRecognition' in window)) {
     }
     final_span.innerHTML = final_transcript+"<br>"
     recognition.stop();
+    response_message=linebreak(final_transcript)
+    say(response_message)
     //linebreak(final_transcript)
     final_span.innerHTML +=linebreak(final_transcript);
   	showInfo('info_start');
