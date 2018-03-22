@@ -122,8 +122,15 @@
 <script src="static/jquery.min.js"></script>
 <script>
 $(document).ready(function(){
+  speech_uttrance=false
   say("welcome to mysite, iam Rio");
-  startButton("onclick")
+  function  speech_delay(){
+  	if(!speech_uttrance)
+  		setTimeout(speech_delay, 1000);
+  	else 
+  		startButton("onclick");
+  }
+
 });
 var langs =
 [['Afrikaans',       ['af-ZA']],
@@ -316,7 +323,11 @@ $.ajax({
               }); 
 }
 function say(m){  var msg = new SpeechSynthesisUtterance(); 
-  var voices = window.speechSynthesis.getVoices();  
+  var voices = window.speechSynthesis.getVoices(); 
+  msg.onend = function(event) {
+  console.log('Utterance has finished being spoken after ' + event.elapsedTime + ' milliseconds.');
+  speech_uttrance=true;
+} 
   msg.voice = voices[1];
   msg.voiceURI = "native";
   msg.volume = 1;   msg.rate = 1;   
