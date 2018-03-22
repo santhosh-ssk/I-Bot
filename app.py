@@ -22,7 +22,7 @@ chatbot.set_trainer(ListTrainer)
 
 @app.route("/")
 def home():
-	return "welcome-1"
+	return render_template("speech.html")
 
 @app.route("/api/chat", methods=['POST'])
 def chat():
