@@ -295,9 +295,7 @@ $.ajax({
                 type: "POST",
                 dataType: "json"
               }).done(function(json) {
-                    alert(json['response'])
-                  }
-                  
+                    alert(json['response'])  
               }).fail(function(xhr, status, errorThrown) {
                 console.log("Error: " + errorThrown);
                 console.log("Status: " + status);
