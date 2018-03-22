@@ -123,9 +123,6 @@
 <script>
 $(document).ready(function(){
   speech_uttrance=false
-  response_message=''
-  final_transcript=''
-  say("welcome to mysite, iam Rio");
   function  speech_delay(){
   	//alert(speech_uttrance)
   	if(!speech_uttrance)
@@ -137,6 +134,7 @@ $(document).ready(function(){
   		//setTimeout(print_message(), 1000);
   		}
   }
+  say("welcome to mysite, iam Rio");
   speech_delay();
   //console.log([final_transcript,response_message])
   //startButton("onclick");
