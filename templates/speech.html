@@ -232,7 +232,8 @@ if (!('webkitSpeechRecognition' in window)) {
     if (event.error == 'no-speech') {
       start_img.src = 'mic.gif';
       showInfo('info_no_speech');
-      recognition.start();
+      ignore_onend = true;
+      //recognition.start();
     }
     if (event.error == 'audio-capture') {
       start_img.src = 'mic.gif';
