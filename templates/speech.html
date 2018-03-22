@@ -312,11 +312,10 @@ if (!('webkitSpeechRecognition' in window)) {
     __speech_flag=true;
     say(response_message)
     //linebreak(final_transcript)
-    return;
     final_span.innerHTML +=linebreak(final_transcript);
   	showInfo('info_start');
   	start_img.src = './static/mic.gif';
-
+  	return;
   };
 }
 
