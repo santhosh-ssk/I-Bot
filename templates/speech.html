@@ -393,6 +393,8 @@ function startButton(event) {
   }
   final_transcript = '';
   recognition.lang = select_dialect.value;
+    s=''
+  response_message=''
   recognition.start();
   ignore_onend = false;
   final_span.innerHTML = '';
@@ -401,7 +403,6 @@ function startButton(event) {
   showInfo('info_allow');
   showButtons('none');
   start_timestamp = event.timeStamp;
-  s,response_message='',''
   return [s,response_message];
 }
 
