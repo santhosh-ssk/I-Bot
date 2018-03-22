@@ -306,33 +306,36 @@ function upgrade() {
 
 var two_line = /\n\n/g;
 var one_line = /\n/g;
-function linebreak(s,intial_flag=1) {
-	console.log(intial_flag)
+function linebreak(s) {
+	/*console.log(intial_flag)
 	if(intial_flag){
 		data_recived_flag=0
-		$.ajax({
+	*/	$.ajax({
                 url: "https://stark-brook-57528.herokuapp.com/api/chat",
                 contentType: "application/json",
                 data: JSON.stringify({"msg":s}),
                 type: "POST",
-                dataType: "json"
+                dataType: "json",
+                async: false
               }).done(function(json) {
-              		data_recived_flag=0
+              		//data_recived_flag=0
                     say(json['response']);
+            		return json['response'];	        
                     //final_span.innerHTML +=json['response'];
 
                 }).fail(function(xhr, status, errorThrown) {
+                	return "error"
                 console.log("Error: " + errorThrown);
                 console.log("Status: " + status);
                 console.dir(xhr);
               });
-        setTimeout(linebreak(s,0),5000);
+        /*setTimeout(linebreak(s,0),5000);
         }
     else{
     	if(data_recived_flag)
     		return json['response'];
     	else setTimeout(linebreak(s,0),5000);
-    } 
+    } */
 }
 function say(m){  var msg = new SpeechSynthesisUtterance(); 
   var voices = window.speechSynthesis.getVoices(); 
