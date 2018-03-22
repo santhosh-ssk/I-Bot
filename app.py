@@ -36,7 +36,7 @@ def chat():
     if response_message.confidence<0.75:
     	response_message="i don't know"
     
-    elif: response_message in ["what do you mean by","what do you mean"]:
+    elif response_message in ["what do you mean by","what do you mean"]:
         if "by" in userText.split():
             wiki_text=userText.split("by")[1]
         else:
@@ -49,7 +49,7 @@ def chat():
             response_message=(e.options)[5].join("\n")
     else:
         response_message=str(response_message)
-        
+
     return jsonify(response=response_message)
     
 @app.route("/api/learn", methods=['POST'])
