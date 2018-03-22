@@ -251,7 +251,7 @@ if (!('webkitSpeechRecognition' in window)) {
   };
 
   recognition.onend = function() {
-  	alert('onend caLLed');
+  	//alert('onend caLLed');
     recognizing = false;
     if (ignore_onend) {
       return;
