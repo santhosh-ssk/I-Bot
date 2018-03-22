@@ -4,6 +4,7 @@ from chatterbot.trainers import ChatterBotCorpusTrainer
 from chatterbot.trainers import ListTrainer
 import urllib
 import json,requests
+import wikipedia
 app = Flask(__name__)
 
 chatbot=ChatBot(
@@ -32,6 +33,17 @@ def home():
 def chat():
     userText = request.json['msg']
     response_message=(chatbot.get_response(userText))
+    if response_message in ["what do you mean by","what do you mean"]:
+        if "by" in userText.split(""):
+            wiki_text=userText.split("by")[1]
+        else:
+            wiki_text=userText.split("mean")[1]
+        print(wiki_text)
+        try:
+            response_message = wikipedia.summary(wiki_text)
+        except wikipedia.exceptions.DisambiguationError as e:
+            print e.options
+            response_message=(e.options)[5].join("\n")
     if response_message.confidence<0.75:
     	response_message="i don't know"
     else:
