@@ -315,7 +315,7 @@ if (!('webkitSpeechRecognition' in window)) {
     final_span.innerHTML +=linebreak(final_transcript);
   	showInfo('info_start');
   	start_img.src = './static/mic.gif';
-  	return [s,response_message];
+  	return [final_transcript,response_message];
   };
 }
 
