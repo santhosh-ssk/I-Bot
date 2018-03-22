@@ -323,7 +323,7 @@ if (!('webkitSpeechRecognition' in window)) {
     final_span.innerHTML = final_transcript+"<br>"
     final_transcript_temp=final_transcript
     console.log("onresult");
-    recognition.stop();
+    //recognition.stop();
     response_message=linebreak(final_transcript)
     __speech_flag=true;
     say(response_message)
