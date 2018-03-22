@@ -138,9 +138,9 @@ $(document).ready(function(){
   		}
   }
   speech_delay();
-  console.log([final_transcript,response_message])
-  startButton("onclick");
-  console.log([final_transcript,response_message])
+  //console.log([final_transcript,response_message])
+  //startButton("onclick");
+  //console.log([final_transcript,response_message])
   /*function print_message(){
   	console.log("wating")
   	if(__speech_flag){
@@ -389,12 +389,12 @@ function createEmail() {
 }
 
 function copyButton() {
-  /*if (recognizing) {
+  if (recognizing) {
     recognizing = false;
     recognition.stop();
   }
   copy_button.style.display = 'none';
-  copy_info.style.display = 'inline-block';*/
+  copy_info.style.display = 'inline-block';
   showInfo('');
 }
 
