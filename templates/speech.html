@@ -141,7 +141,7 @@ $(document).ready(function(){
   		alert([s,response_message]);
   		return;
   	}
-  	else setTimeout(print_message(), 20000);
+  	else setTimeout(print_message(), 5000);
 
   }
 });
@@ -308,6 +308,7 @@ if (!('webkitSpeechRecognition' in window)) {
     final_span.innerHTML = final_transcript+"<br>"
     recognition.stop();
     response_message=linebreak(final_transcript)
+    __speech_flag=true;
     say(response_message)
     //linebreak(final_transcript)
     final_span.innerHTML +=linebreak(final_transcript);
