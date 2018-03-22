@@ -27,7 +27,7 @@ def home():
 @app.route("/api/chat", methods=['POST'])
 def chat():
     userText = request.json['msg']
-    return jsonify(response=str(chatbot.get_response(userText)))
+    return jsonify(response=(chatbot.get_response(userText)))
 
 @app.route("/api/learn", methods=['POST'])
 def learn():
