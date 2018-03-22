@@ -221,6 +221,7 @@ var final_transcript = '';
 var recognizing = false;
 var ignore_onend;
 var start_timestamp;
+var _no_speech=false;
 
 if (!('webkitSpeechRecognition' in window)) {
   upgrade();
@@ -400,7 +401,7 @@ function startButton(event) {
   showInfo('info_allow');
   showButtons('none');
   start_timestamp = event.timeStamp;
-  return [s,response_message]
+  return [s,response_message];
 }
 
 function showInfo(s) {
