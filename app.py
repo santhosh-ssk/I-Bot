@@ -20,8 +20,8 @@ chatbot=ChatBot(
 
 chatbot.set_trainer(ListTrainer)
 conversation=[
-"stop",
-"stop"
+"that's it",
+"that's it"
 ]
 chatbot.train(conversation)
 @app.route("/")
