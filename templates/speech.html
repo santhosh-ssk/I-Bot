@@ -11,6 +11,7 @@ var UserDictation = artyom.newDictation({
     onResult:function(text){
         // Do something with the text
         if(!artyom.isSpeaking())
+        	console.log("audio recorded");
         	UserDictation.stop()
         console.log(text);
     },
