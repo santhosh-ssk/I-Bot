@@ -263,6 +263,7 @@ if (!('webkitSpeechRecognition' in window)) {
   	//alert('onend caLLed');
     recognizing = false;
     if(_no_speech){
+    	_no_speech=false;
     	startButton("onclick");
     	return;
     }
