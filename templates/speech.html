@@ -126,6 +126,7 @@
 <script src="static/filereader.js"></script>
 <script>
 function getBase64(file) {
+  alert(file);
    var reader = new FileReader();
    reader.readAsDataURL(file);
    reader.onload = function () {
