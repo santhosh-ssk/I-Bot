@@ -48,7 +48,9 @@ def chat():
             response_message = wikipedia.summary(wiki_text, sentences=1)
         except wikipedia.exceptions.DisambiguationError as e:
             print(e.options)
-            response_message=(e.options)[5].join(",")
+            response_message=",".join((e.options)[5])
+            response_message=wiki_text+"map's for"+(e.options)[5]
+            print(response_message)
     else:
         response_message=str(response_message)
 
