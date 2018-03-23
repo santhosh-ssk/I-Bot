@@ -34,11 +34,7 @@ conversation=[
 "let us start learning",
 "let us start learning"
 ]
-chatbot.train(conversation)
-conversation=[
-"let us start learning",
-"let us start learning"
-]
+
 chatbot.train(conversation)
 @app.route("/")
 def home():
