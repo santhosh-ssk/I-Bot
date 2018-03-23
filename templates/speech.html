@@ -119,6 +119,7 @@
     <select id="select_dialect"></select>
   </div>
   <input type="button" value="speech" id="speech_button" onclick="speech_detction()">
+  <input type="file" id="#image_category" onclick="image_category()">
 </div>
 <script src="static/jquery.min.js"></script>
 <script>
@@ -128,7 +129,19 @@
   function speech_detction(){
   	startButton("onclick");
   }
-
+  function image_category(){
+      $.ajax({
+          url: "https://stark-brook-57528.herokuapp.com/api/image_classifier",
+          data: JSON.stringify({"file":$('#image_category').attr('files')}),
+          cache: false,
+          contentType: 'multipart/form-data',
+          processData: false,
+          type: 'POST',
+          success: function(data){
+              alert(data["status"]);
+          }
+      });
+  }
 $(document).ready(function(){
   speech_uttrance=false
 
