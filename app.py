@@ -79,6 +79,7 @@ def translate():
 
 @app.route("/api/image_classifier", methods=['POST'])
 def image_classifier():
+    print(request.json,request.files)
 	api_key = 'acc_a8a69b84e97af11'
 	api_secret = '97eed8248a51c9feaf65e172ee9010e8'
 	image = request.files['file']
