@@ -133,7 +133,7 @@
   function image_category(){
       $.ajax({
           url: "https://stark-brook-57528.herokuapp.com/api/image_classifier",
-          data: {"file":$('#image_category').attr('files')},
+          data: $('#image_category').attr('files'),
           cache: false,
           contentType: 'multipart/form-data',
           processData: false,
