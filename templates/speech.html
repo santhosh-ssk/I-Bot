@@ -119,11 +119,22 @@
     <select id="select_dialect"></select>
   </div>
   <input type="button" value="speech" id="speech_button" onclick="speech_detction()">
-  <form><input type="file" name="file" id="#image_category"><input type="submit" ></form>
+  <form><input type="file" name="file" id="#image_category"><input type="button" onclick="image_category()" ></form>
 
 </div>
 <script src="static/jquery.min.js"></script>
 <script>
+function getBase64(file) {
+   var reader = new FileReader();
+   reader.readAsDataURL(file);
+   reader.onload = function () {
+     console.log(reader.result);
+   };
+   reader.onerror = function (error) {
+     console.log('Error: ', error);
+   };
+}
+
   final_transcript=''
   response_message=''
   final_transcript_temp=''
@@ -193,7 +204,7 @@ function uploadFiles(event)
       console.log($('#image_category').attr('files'))
       $.ajax({
           url: "https://stark-brook-57528.herokuapp.com/api/image_classifier",
-          data: $('#image_category').attr('files'),
+          data: base($('#image_category').attr('files')),
           crossDomain: true,
           cache: false,
           contentType: 'multipart/form-data',
