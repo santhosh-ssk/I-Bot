@@ -36,7 +36,7 @@ def chat():
     if response_message.confidence<0.75:
     	response_message="sorry,i don't know"
     
-    elif response_message in ["what do you mean by","what do you mean","search for"]:
+    if response_message in ["what do you mean by","what do you mean","search for"]:
         if "by" in userText.split():
             wiki_text=userText.split("by")[1]
         elif "for" in userText.split():
