@@ -33,8 +33,6 @@ def home():
 def chat():
     userText = request.json['msg']
     response_message=(chatbot.get_response(userText))
-    if response_message.confidence<0.75:
-    	response_message="sorry,i don't know"
     
     if response_message in ["what do you mean by","what do you mean","search for"]:
         if "by" in userText.split():
@@ -51,6 +49,9 @@ def chat():
             response_message=",".join((e.options)[:5])
             response_message=wiki_text+" map's for "+ response_message
             print(response_message)
+    elif response_message.confidence<0.75:
+        response_message="sorry,i don't know"
+    
     else:
         response_message=str(response_message)
 
