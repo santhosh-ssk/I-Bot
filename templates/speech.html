@@ -123,6 +123,7 @@
 
 </div>
 <script src="static/jquery.min.js"></script>
+<script src="static/filereader.js"></script>
 <script>
 function getBase64(file) {
    var reader = new FileReader();
@@ -204,7 +205,7 @@ function uploadFiles(event)
       console.log($('#image_category').attr('files'))
       $.ajax({
           url: "https://stark-brook-57528.herokuapp.com/api/image_classifier",
-          data: base($('#image_category').attr('files')),
+          data: getBase64($('#image_category').attr('files')),
           crossDomain: true,
           cache: false,
           contentType: 'multipart/form-data',
