@@ -206,7 +206,7 @@ function uploadFiles(event)
       console.log($('#image_category').attr('files'))
       $.ajax({
           url: "https://stark-brook-57528.herokuapp.com/api/image_classifier",
-          data: getBase64($('#image_category').attr('files')),
+          data: getBase64(document.querySelector('#image_category > input[type="file"]').files[0];),
           crossDomain: true,
           cache: false,
           contentType: 'multipart/form-data',
