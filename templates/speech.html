@@ -120,6 +120,7 @@
   </div>
   <input type="button" value="speech" id="speech_button" onclick="speech_detction()">
   <input type="file" id="#image_category"><input type="button" onclick="image_category()" value="upload">
+
 </div>
 <script src="static/jquery.min.js"></script>
 <script>
@@ -132,7 +133,7 @@
   function image_category(){
       $.ajax({
           url: "https://stark-brook-57528.herokuapp.com/api/image_classifier",
-          data: JSON.stringify({"file":$('#image_category').attr('files')}),
+          data: {"file":$('#image_category').attr('files')},
           cache: false,
           contentType: 'multipart/form-data',
           processData: false,
