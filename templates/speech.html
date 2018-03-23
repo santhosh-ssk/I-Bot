@@ -123,7 +123,6 @@
 
 </div>
 <script src="static/jquery.min.js"></script>
-<script type='text/javascript' src='static/filereader.js'></script>
 <script>
   final_transcript=''
   response_message=''
@@ -131,14 +130,6 @@
   function speech_detction(){
   	startButton("onclick");
   }
-  function encodeImageFileAsURL(element) {
-  var file = element.files[0];
-  var reader = new FileReader();
-  reader.onloadend = function() {
-    console.log('RESULT', reader.result)
-  }
-  reader.readAsDataURL(file);
-}
   // Variable to store your files
 var files;
 
@@ -172,6 +163,7 @@ function uploadFiles(event)
         type: 'POST',
         data: data,
         cache: false,
+        dataType: 'json',
         processData: false, // Don't process the files
         contentType: false, // Set content type to false as jQuery will tell the server its a query string request
         success: function(data, textStatus, jqXHR)
@@ -198,12 +190,11 @@ function uploadFiles(event)
   function image_category(){
       //input=document.getElementById('image_category');
       //console.log(input.files);
-       var reader = new FileReader();
       console.log($('#image_category').attr('files'))
       $.ajax({
           url: "https://stark-brook-57528.herokuapp.com/api/image_classifier",
           data: $('#image_category').attr('files'),
-          crossDomain: true,
+          crossDomain: true,,
           cache: false,
           contentType: 'multipart/form-data',
           processData: false,
