@@ -43,7 +43,7 @@ def chat():
             wiki_text=userText.split("mean")[1]
         print(wiki_text)
         try:
-            response_message = wikipedia.summary(wiki_text, sentences=2)
+            response_message = wikipedia.summary(wiki_text, sentences=3)
         except wikipedia.exceptions.DisambiguationError as e:
             print(e.options)
             response_message=",".join((e.options)[:5])
