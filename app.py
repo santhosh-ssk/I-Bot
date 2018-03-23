@@ -41,7 +41,7 @@ def chat():
             wiki_text=userText.split("by")[1]
         elif "for" in userText.split():
             wiki_text=userText.split("for")[1]
-        else
+        else:
             wiki_text=userText.split("mean")[1]
         print(wiki_text)
         try:
