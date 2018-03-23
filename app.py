@@ -25,6 +25,16 @@ conversation=[
 "that's it"
 ]
 chatbot.train(conversation)
+conversation=[
+"stop",
+"stop"
+]
+chatbot.train(conversation)
+conversation=[
+"let us start learning",
+"let us start learning"
+]
+chatbot.train(conversation)
 @app.route("/")
 def home():
 	return render_template("speech.html")
