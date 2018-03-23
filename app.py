@@ -95,12 +95,12 @@ def image_classifier():
     api_secret = '97eed8248a51c9feaf65e172ee9010e8'
     #image = request.files['file']
     print(request.files.to_dict())
-    #image=request.files.to_dict()['0']
-    #response = requests.post('https://api.imagga.com/v1/content',
-    #auth=(api_key, api_secret),
-    #files={'image': image.read().encode('utf-8').decode('ascii','ignore')})
-    #return jsonify(json.loads(response.content.decode("utf-8")))
-    return jsonify(response="response")
+    image=request.files.to_dict()['0']
+    response = requests.post('https://api.imagga.com/v1/content',
+    auth=(api_key, api_secret),
+    files={'image': image.read().encode('utf-8').decode('ascii','ignore')})
+    return jsonify(json.loads(response.content.decode("utf-8")))
+    #return jsonify(response="response")
 
 
 if __name__ == "__main__":
