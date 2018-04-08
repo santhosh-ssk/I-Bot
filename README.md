@@ -1,17 +1,20 @@
 # I-Bot
 ##Objective:
-''' The Objective this project is to develop an application,that is capable of learning from others,and share it with others.'''
+	''' 	
+		The Objective this project is to develop an application,that is capable of learning from others,and share it with others.
+	'''
 
-## Website link https://stark-brook-57528.herokuapp.com/, you can have a chat with the website link, but to teach the model you need android application.
+#### Website link https://stark-brook-57528.herokuapp.com/, you can have a chat with the website link, but to teach the model you need android application.
 
 ## Techknowledge Used:
-'''
-	1) Python-flask sever
-	2) Python-Chatterbot
-	3) Centralized Mongodb database
-	4) wikipedia Api,google speech to text Api
-	5) Android,html,css,javascript,jqueryhttps://stark-brook-57528.herokuapp.com/
-'''
+	'''
+		1) Python-flask sever
+		2) Python-Chatterbot
+		3) Centralized Mongodb database
+		4) wikipedia Api,google speech to text Api
+		5) Android,html,css,javascript,jqueryhttps://stark-brook-57528.herokuapp.com/
+	
+	'''
 
 ##Usage:
 ###	Chat:
