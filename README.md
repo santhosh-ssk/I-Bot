@@ -19,8 +19,9 @@ Android app:https://drive.google.com/open?id=0B7jojn6xNn2DTmlnMFlpb1NDMlJ6OXRCRT
 	
 	
 ## Developers:
-	1) S Santhosh Kumar 
-	2) V Shrivatsun
+	
+		1) S Santhosh Kumar 
+		2) V Shrivatsun
 
 ## Usage:
 ###	Chat:
