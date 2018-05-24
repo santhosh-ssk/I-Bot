@@ -31,8 +31,7 @@ Android app:https://drive.google.com/open?id=0B7jojn6xNn2DTmlnMFlpb1NDMlJ6OXRCRT
 ###	Teaching:
 	
 		say "let's start learning", learning mode will be initialized, you 
-		can teach the model with a series of question and answer aor the 
-		daily conversation,
+		can teach the model with a series of question and answer,
 		once  learning is done say 'that's it' it end learning, the you can 
 		check the learning model by having a conversation.
 	
